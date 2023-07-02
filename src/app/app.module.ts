@@ -8,6 +8,14 @@ import { TchauMundoComponent } from './components/tchau-mundo/tchau-mundo.compon
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { LandPageComponent } from './land-page/land-page.component';
+import { CadastroEmpresaAereaComponent } from './cadastro-empresa-aerea/cadastro-empresa-aerea.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SaldoMilhasComponent } from './saldo-milhas/saldo-milhas.component';
+import { MovimentacaoComponent } from './movimentacao/movimentacao.component';
+import { CadastroEmpresaParceiraComponent } from './cadastro-empresa-parceira/cadastro-empresa-parceira.component';
+import { PainelSaldoComponent } from './painel-saldo/painel-saldo.component';
+import { PainelSaldoDetalhesComponent } from './painel-saldo-detalhes/painel-saldo-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +24,19 @@ import { LandPageComponent } from './land-page/land-page.component';
     TchauMundoComponent,
     MenuComponent,
     RodapeComponent,
-    LandPageComponent
+    LandPageComponent,
+    CadastroEmpresaAereaComponent,
+    SaldoMilhasComponent,
+    MovimentacaoComponent,
+    CadastroEmpresaParceiraComponent,
+    PainelSaldoComponent,
+    PainelSaldoDetalhesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule , 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

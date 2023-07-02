@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 
 @Component({
   selector: 'app-land-page',
@@ -7,7 +7,10 @@ import { Component, OnInit  } from '@angular/core';
 })
 export class LandPageComponent implements OnInit{
 
-  isHidePanel = true;
-  
-  ngOnInit(): void {}
+  @Input() usuarioNome: string = 'Mévio';
+
+  isHidePanel = false;
+  ngOnInit(): void {
+        
+  }
 }
