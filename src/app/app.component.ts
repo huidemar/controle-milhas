@@ -12,6 +12,9 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('mobile') sideNav?: ElementRef;
 
   title = 'Aplicação para Controle de milhas';
+
+  usuarioNome = 'Mévio';
+
   constructor(private titleService: Title) {}
   ngAfterViewInit(): void {
     if (this.sideNav) {

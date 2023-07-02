@@ -1,0 +1,46 @@
+<div class="container">
+    <h3>Movimentação</h3>
+    <form (submit)="cadastrarOperacao()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" id="empresaOrigem" [(ngModel)]="empresaOrigem" required>
+          <label for="empresaOrigem">Empresa de Origem</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" id="empresaDestino" [(ngModel)]="empresaDestino" required>
+          <label for="empresaDestino">Empresa de Destino</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select id="tipoOperacao" [(ngModel)]="tipoOperacao" required>
+            <option value="" disabled selected>Selecione o tipo de operação</option>
+            <option value="Compra">Compra</option>
+            <option value="Venda">Venda</option>
+            <option value="Transferência">Transferência</option>
+          </select>
+          <label for="tipoOperacao">Tipo de Operação</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="date" id="dataOperacao" [(ngModel)]="dataOperacao" required>
+          <label for="dataOperacao">Data da Operação</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="number" id="quantidadeMilhas" [(ngModel)]="quantidadeMilhas" required>
+          <label for="quantidadeMilhas">Quantidade de Milhas</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="number" id="valorMilha" [(ngModel)]="valorMilha" required>
+          <label for="valorMilha">Valor das Milhas</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button type="submit" class="waves-effect waves-light btn">Cadastrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,12 @@
+.panel {
+    width: 300px;
+    height: 100px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .saldo {
+    font-size: 24px;
+    font-weight: bold;
+  }
