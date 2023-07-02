@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { EmpresaAereaService } from 'src/app/cadastro-empresa-aerea/service/empresa-aerea.service';
 
 @Component({
   selector: 'app-cadastro-empresa-aerea',
@@ -10,6 +11,7 @@ export class CadastroEmpresaAereaComponent {
   
   empresaForm!: FormGroup;
   listEmpresas: any[] = []; 
+  empresaAereaService!: EmpresaAereaService;
 
   constructor(private formBuilder: FormBuilder) { 
 
@@ -53,7 +55,15 @@ export class CadastroEmpresaAereaComponent {
     }
     console.log('Enviou formulário');
     const empresa = this.empresaForm.value;
-    // Lógica para salvar a empresa
+    alert(this.empresaForm.value)
+    this.empresaAereaService.salvar(empresa).then(() => {
+      alert('Empresa cadastrada com sucesso');
+      this.listEmpresas.push(empresa);      
+    })
+    .catch(error => {
+      alert('Erro ao cadastrar empresa:' + error);
+    });
+
     this.listEmpresas.push(empresa);
     this.resetForm();    
   }
