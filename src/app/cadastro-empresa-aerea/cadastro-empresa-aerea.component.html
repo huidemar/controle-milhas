@@ -1,0 +1,62 @@
+<div class="container">
+  <h3>Cadastro de Empresa Aérea</h3>
+  <form (ngSubmit)="submit()" [formGroup]="empresaForm" #formDir="ngForm">
+    <div class="input-field">
+      <input type="text" id="id" formControlName="id" readonly class="hide">      
+    </div>
+    <div class="input-field">
+      <input type="text" id="nome-empresa" formControlName="nomeEmpresa">
+      <label for="nome-empresa">Nome da Empresa</label>
+      <div *ngIf="nomeEmpresa.invalid" class="error-message">
+        Nome da Empresa é obrigatório
+      </div>  
+      <!--nomeEmpresa.errors.required-->
+      <div *ngIf="hasInvalidPattern()" class="error-message">
+        Nome da Empresa contém caracteres inválidos
+      </div>        
+    </div>
+    <div class="input-field">
+      <input type="number" id="saldo-milhas" formControlName="saldoMilhas" mask="separator.2">
+      <label for="saldo-milhas">Saldo de Milhas</label>
+      <div *ngIf="saldoMilhas.invalid" class="error-message">
+        Saldo de Milhas é obrigatório
+      </div>
+    </div>
+    <div class="input-field">
+      <input type="number" id="valor-pago-milhas" formControlName="valorPagoMilhas" mask="separator.2">
+      <label for="valor-pago-milhas">Valor Pago nas Milhas</label>
+      <div *ngIf="valorPagoMilhas.invalid" class="error-message">
+        Valor Pago nas Milhas é obrigatório
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" [disabled]="isFormInvalid()">Salvar</button>
+    <button class="btn waves-effect waves-red" (click)="resetForm()">Cancelar</button>
+  </form>
+
+  <div class="row">
+    <div class="col s12">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome da Empresa</th>
+            <th>Data do Saldo</th>
+            <th>Saldo de Milhas</th>
+            <th>Valor Pago nas Milhas</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empresa of listEmpresas">
+            <td>{{ empresa.id }}</td>
+            <td>{{ empresa.nomeEmpresa }}</td>
+            <td>{{ empresa.dataSaldo }}</td>
+            <td>{{ empresa.saldoMilhas }}</td>
+            <td>{{ empresa.valorPagoMilhas }}</td>
+            <td><button class="waves-effect waves-light btn" (click)="editarEmpresa(empresa.id)">Editar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
