@@ -1,0 +1,26 @@
+<div class="container">
+    <h3>Saldo Milhas</h3>
+    <div class="row">
+      <div class="col s12">
+        <table class="highlight">
+          <thead>
+            <tr>
+              <th>Código da Empresa</th>
+              <th>Nome da Empresa</th>
+              <th>Saldo</th>
+              <th>Detalhes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let empresa of empresas">
+              <td>{{ empresa.codigo }}</td>
+              <td>{{ empresa.nome }}</td>
+              <td>{{ empresa.saldo }}</td>
+              <td><button class="waves-effect waves-light btn-small" (click)="mostrarDetalhes(empresa.codigo)">Detalhes</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
