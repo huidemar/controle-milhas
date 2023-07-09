@@ -1,7 +1,7 @@
 {
   "parceira": [
     {
-      "idParceiro": 1,
+      "idParceiro": "01",
       "nomeParceiro": "Livelo",
       "saldoMilhas": 200,
       "valorPago": 35
@@ -11,6 +11,12 @@
       "nomeParceiro": "2",
       "saldoMilhas": 2,
       "valorPago": 2
+    },
+    {
+      "id": "3",
+      "nomeParceiro": "erwer",
+      "saldoMilhas": 23,
+      "valorPago": 70
     }
   ],
   "aerea": [

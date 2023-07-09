@@ -16,6 +16,8 @@ import { MovimentacaoComponent } from './movimentacao/movimentacao.component';
 import { CadastroEmpresaParceiraComponent } from './cadastro-empresa-parceira/cadastro-empresa-parceira.component';
 import { PainelSaldoComponent } from './painel-saldo/painel-saldo.component';
 import { PainelSaldoDetalhesComponent } from './painel-saldo-detalhes/painel-saldo-detalhes.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { PainelSaldoDetalhesComponent } from './painel-saldo-detalhes/painel-sal
     BrowserModule,
     AppRoutingModule,
     FormsModule , 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

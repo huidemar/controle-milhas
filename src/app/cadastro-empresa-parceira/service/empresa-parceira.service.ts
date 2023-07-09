@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { EmpresaParceira} from 'src/app/cadastro-empresa-parceira/empresaparceira.module';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +10,7 @@ import { EmpresaParceira} from 'src/app/cadastro-empresa-parceira/empresaparceir
 export class EmpresaParceiraService {
   private apiUrl = 'http://localhost:3000/parceira/';  
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   // public salvar(data: EmpresaParceira){
   //   localStorage.setItem(data.id.toString(),JSON.stringify(data));
@@ -31,4 +34,14 @@ export class EmpresaParceiraService {
     });
   }
 
+  public getEmpresaParceira(): Observable<EmpresaParceira[]> {
+    return this.http.get<EmpresaParceira[]>(this.apiUrl)
+      .pipe(
+        catchError(error => {
+          console.error('Erro ao carregar empresas parceiras:', error);
+          throw error;
+        })
+      );
+  }
+  
 }
