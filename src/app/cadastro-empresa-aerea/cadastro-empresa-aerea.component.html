@@ -2,9 +2,6 @@
   <h3>Cadastro de Empresa Aérea</h3>
   <form (ngSubmit)="submit()" [formGroup]="empresaForm" #formDir="ngForm">
     <div class="input-field">
-      <input type="text" id="id" formControlName="id" readonly class="hide">      
-    </div>
-    <div class="input-field">
       <input type="text" id="nome-empresa" formControlName="nomeEmpresa">
       <label for="nome-empresa">Nome da Empresa</label>
       <div *ngIf="nomeEmpresa.invalid" class="error-message">

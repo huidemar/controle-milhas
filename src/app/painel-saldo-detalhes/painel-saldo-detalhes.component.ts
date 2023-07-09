@@ -24,5 +24,18 @@ export class PainelSaldoDetalhesComponent {
         });
       }
     }
+    if (codigo == 2){
+      // Gerar 10 registros para a mesma empresa (código "001")
+      this.movimentos = [];
+      for (let i = 0; i < 5; i++) {
+        this.movimentos.push({
+          codigoEmpresa: '002',
+          dataMovimento: '2023-06-01',
+          tipoMovimentacao: 'Crédito',
+          quantidadeMilhas: 100,
+          valorPago: 50
+        });
+      }
+    }    
   }
 }

@@ -15,7 +15,7 @@ export class CadastroEmpresaParceiraComponent {
   nomeParceiro: string = '';  
   saldoMilhas: number = 0;
   valorPago: number = 0;
-  
+  listEmpresas: EmpresaParceira[] = []; 
   constructor(private empresaParceiraService: EmpresaParceiraService){
     
   }
@@ -27,6 +27,7 @@ export class CadastroEmpresaParceiraComponent {
       saldoMilhas: new FormControl('', [Validators.required]),
       valorPago: new FormControl('', [Validators.required])
     });
+    this.carregarEmpresaParceiras();
   }
 
   onSubmit() {
@@ -49,11 +50,18 @@ export class CadastroEmpresaParceiraComponent {
       window.alert('O campo Saldo de Milhas deve ser preenchido.');
       return false;
     }
-    const controle = this.formEmpresaParceira.get('valor');
-    if (controle && controle.hasError('email')) {
-      window.alert('O campo Valor Pago deve ser um e-mail válido.');
-      return false;
-    }
     return true; 
+  }
+
+  carregarEmpresaParceiras() {
+    this.empresaParceiraService.getEmpresaParceira()
+      .subscribe(
+        empresas => {
+          this.listEmpresas = empresas;
+        },
+        error => {
+          console.error('Erro ao carregar empresas parceiras:', error);
+        }
+      );
   }
 }
