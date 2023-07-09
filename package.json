@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/controle-milhas/",
-    "ghpages": "angular-cli-ghpages --dir=dist/controle-milhas",
+    "build": "ng build --base-href=/app-controle-milhas/",
+    "ghpages": "angular-cli-ghpages --dir=dist/app-controle-milhas",
     "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
