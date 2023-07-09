@@ -37,6 +37,26 @@
       <p>O nome do parceiro é {{nomeParceiro}}</p>  
       <app-painel-saldo [saldo]="saldoMilhas"></app-painel-saldo>          
     </form>    
+    <div class="row">
+      <div class="col s12">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome da Empresa</th>
+              <th>Saldo de Milhas</th>
+              <th>Valor Pago nas Milhas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let empresa of listEmpresas">
+              <td>{{ empresa.nomeParceiro | uppercase  }}</td>
+              <td>{{ empresa.saldoMilhas}}</td>
+              <td>{{ empresa.valorPago  | currency : 'BRL'}}</td>              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>    
 </div>
   
   

@@ -15,7 +15,7 @@ export class CadastroEmpresaParceiraComponent {
   nomeParceiro: string = '';  
   saldoMilhas: number = 0;
   valorPago: number = 0;
-  
+  listEmpresas: EmpresaParceira[] = []; 
   constructor(private empresaParceiraService: EmpresaParceiraService){
     
   }
@@ -27,6 +27,7 @@ export class CadastroEmpresaParceiraComponent {
       saldoMilhas: new FormControl('', [Validators.required]),
       valorPago: new FormControl('', [Validators.required])
     });
+    this.carregarEmpresaParceiras();
   }
 
   onSubmit() {
@@ -50,5 +51,17 @@ export class CadastroEmpresaParceiraComponent {
       return false;
     }
     return true; 
+  }
+
+  carregarEmpresaParceiras() {
+    this.empresaParceiraService.getEmpresaParceira()
+      .subscribe(
+        empresas => {
+          this.listEmpresas = empresas;
+        },
+        error => {
+          console.error('Erro ao carregar empresas parceiras:', error);
+        }
+      );
   }
 }
