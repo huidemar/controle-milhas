@@ -49,11 +49,6 @@ export class CadastroEmpresaParceiraComponent {
       window.alert('O campo Saldo de Milhas deve ser preenchido.');
       return false;
     }
-    const controle = this.formEmpresaParceira.get('valor');
-    if (controle && controle.hasError('email')) {
-      window.alert('O campo Valor Pago deve ser um e-mail válido.');
-      return false;
-    }
     return true; 
   }
 }
