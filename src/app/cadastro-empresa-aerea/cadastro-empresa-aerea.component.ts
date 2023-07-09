@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild  } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { EmpresaAereaService } from 'src/app/cadastro-empresa-aerea/service/empresa-aerea.service';
+import { EmpresaAerea } from './empresaaerea.module';
 
 @Component({
   selector: 'app-cadastro-empresa-aerea',
@@ -11,34 +12,20 @@ export class CadastroEmpresaAereaComponent {
   
   empresaForm!: FormGroup;
   listEmpresas: any[] = []; 
-  empresaAereaService!: EmpresaAereaService;
+  @ViewChild(EmpresaAereaService) empresaAereaService!: EmpresaAereaService;
 
-  constructor(private formBuilder: FormBuilder) { 
-
-    for (let i = 0; i < 5; i++) {
-      this.listEmpresas.push({
-        id: i,
-        nomeEmpresa: i+' - '+i,
-        dataSaldo: '2023-06-01',
-        saldoMilhas: 100,
-        valorPagoMilhas: 50
-      });
-    }
-
+  constructor(private formBuilder: FormBuilder ) {   
+    
   }
 
   ngOnInit() {
     this.empresaForm = this.formBuilder.group({
-      id: new FormControl(''),
       nomeEmpresa: ['', [Validators.required, Validators.pattern(/^[^-\#!@%*()+_<>,ºª§]+$/)], this.validaNomeEmpresa],
       saldoMilhas: new FormControl('', [Validators.required]),
       valorPagoMilhas: new FormControl('', [Validators.required])
     });
   }
 
-  get id(){
-    return this.empresaForm.get('id')!;
-  }
   get nomeEmpresa(){
     return this.empresaForm.get('nomeEmpresa')!;
   }
@@ -53,19 +40,19 @@ export class CadastroEmpresaAereaComponent {
     if (this.empresaForm.invalid){
       return;
     }
-    console.log('Enviou formulário');
-    const empresa = this.empresaForm.value;
-    alert(this.empresaForm.value)
-    this.empresaAereaService.salvar(empresa).then(() => {
-      alert('Empresa cadastrada com sucesso');
-      this.listEmpresas.push(empresa);      
-    })
-    .catch(error => {
-      alert('Erro ao cadastrar empresa:' + error);
-    });
-
-    this.listEmpresas.push(empresa);
-    this.resetForm();    
+    const novaEmpresaAerea = {
+      nomeEmpresa: this.nomeEmpresa,
+      saldoMilhas: this.saldoMilhas,
+      valorPago: this.valorPagoMilhas
+    };
+    alert('aqui = '+novaEmpresaAerea.nomeEmpresa);
+    this.empresaAereaService.salvar(novaEmpresaAerea)
+      .then(response => {
+        console.log('Empresa aérea cadastrada');
+      })
+      .catch(error => {
+        console.log('Erro ao cadastrar empresa aérea');
+      });
   }
 
   editarEmpresa(id: number) {

@@ -1,17 +1,70 @@
 {
-  "empresa-parceira": [
-    { "id": 1, "nomeParceiro": "Livelo", "saldoMilhas": 200, "valorPago": 35 }
+  "parceira": [
+    {
+      "idParceiro": 1,
+      "nomeParceiro": "Livelo",
+      "saldoMilhas": 200,
+      "valorPago": 35
+    },
+    {
+      "id": "02",
+      "nomeParceiro": "2",
+      "saldoMilhas": 2,
+      "valorPago": 2
+    }
   ],
-  "empresa-aerea": [
-    { "nomeEmpresa": "Smiles", "saldoMilhas": 200, "valorPago": 0 },
-	{ "nomeEmpresa": "Latan", "saldoMilhas": 1000, "valorPago": 70 },
-	{ "nomeEmpresa": "Azul", "saldoMilhas": 10000, "valorPago": 700 }	
+  "aerea": [
+    {
+      "nomeEmpresa": "Smiles",
+      "saldoMilhas": 200,
+      "valorPago": 0
+    },
+    {
+      "nomeEmpresa": "Latan",
+      "saldoMilhas": 1000,
+      "valorPago": 70
+    },
+    {
+      "nomeEmpresa": "Azul",
+      "saldoMilhas": 10000,
+      "valorPago": 700
+    }
   ],
   "movimentacao": [
-    {"codEmpresa": "001", "dataMovimento": "2023-06-01", "tipoMovimento": "Compra", "qtdeMilhas": 1000, "valorPago": 50},
-    {"codEmpresa": "001", "dataMovimento": "2023-06-01", "tipoMovimento": "Compra", "qtdeMilhas": 1000, "valorPago": 50},
-    {"codEmpresa": "001", "dataMovimento": "2023-06-01", "tipoMovimento": "Compra", "qtdeMilhas": 1000, "valorPago": 50},
-    {"codEmpresa": "001", "dataMovimento": "2023-06-01", "tipoMovimento": "Compra", "qtdeMilhas": 1000, "valorPago": 50},
-    {"codEmpresa": "001", "dataMovimento": "2023-06-01", "tipoMovimento": "Compra", "qtdeMilhas": 1000, "valorPago": 50}
-  ]  
+    {
+      "codEmpresa": "001",
+      "dataMovimento": "2023-06-01",
+      "tipoMovimento": "Compra",
+      "qtdeMilhas": 1000,
+      "valorPago": 50
+    },
+    {
+      "codEmpresa": "001",
+      "dataMovimento": "2023-06-01",
+      "tipoMovimento": "Compra",
+      "qtdeMilhas": 1000,
+      "valorPago": 50
+    },
+    {
+      "codEmpresa": "001",
+      "dataMovimento": "2023-06-01",
+      "tipoMovimento": "Compra",
+      "qtdeMilhas": 1000,
+      "valorPago": 50
+    },
+    {
+      "codEmpresa": "001",
+      "dataMovimento": "2023-06-01",
+      "tipoMovimento": "Compra",
+      "qtdeMilhas": 1000,
+      "valorPago": 50
+    },
+    {
+      "codEmpresa": "001",
+      "dataMovimento": "2023-06-01",
+      "tipoMovimento": "Compra",
+      "qtdeMilhas": 1000,
+      "valorPago": 50
+    }
+  ]
 }

@@ -1,10 +1,10 @@
 export class EmpresaAerea {
-    nomeParceiro: string;
+    nomeEmpresa: string;
     saldoMilhas: number;
     valorPago: number;
   
-    constructor(nomeParceiro: string, saldoMilhas: number, valorPago: number) {
-      this.nomeParceiro = nomeParceiro;
+    constructor(nomeEmpresa: string, saldoMilhas: number, valorPago: number) {
+      this.nomeEmpresa = nomeEmpresa;
       this.saldoMilhas = saldoMilhas;
       this.valorPago = valorPago;
     }
