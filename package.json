@@ -1,12 +1,12 @@
 {
-  "name": "app-controle-milhas",
+  "name": "controle-milhas",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/app-controle-milhas/",
-    "ghpages": "angular-cli-ghpages --dir=dist/app-controle-milhas",
-    "deploy": "npm run build & npm run ghpages",
+    "build": "ng build --base-href=/controle-milhas/",
+    "ghpages": "angular-cli-ghpages --dir=dist/controle-milhas",
+    "deploy": "npm run build && npm run ghpages",    
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "json:server": "json-server --watch db.json",
